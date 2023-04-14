@@ -1,6 +1,10 @@
 ---
 - name: Upgrade packages
-  apt: upgrade=safe
+  apt:
+    upgrade: safe
+    update_cache: yes
+    cache_valid_time: 300
+  become: yes
 
 - name: Install packages
   apt:
